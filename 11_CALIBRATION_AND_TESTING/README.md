@@ -1,6 +1,6 @@
 # Calibration and Testing
 
-This section documents the calibration procedures and testing results for the powered wheelchair autonomous navigation system.
+This section documents calibration procedures, sensor verification, and system performance tests.
 
 ## Contents
 
@@ -10,6 +10,5 @@ This section documents the calibration procedures and testing results for the po
 | `wheel_calibration.md` | Wheel and encoder calibration |
 | `odometry_calibration.md` | Odometry accuracy and calibration |
 | `sensor_calibration.md` | LiDAR and depth camera calibration |
-| `navigation_testing.md` | Autonomous navigation tests |
 | `performance_testing.md` | System performance and resource usage |
-| `test_results.md` | Summary of test results |
+| `test_results.md` | Summary of calibration and testing results |
