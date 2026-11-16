@@ -4,68 +4,105 @@
 
 Nav2 uses two costmaps to support autonomous navigation:
 
-- **Global Costmap:** Represents obstacles across the mapped environment.
-- **Local Costmap:** Represents nearby obstacles around the moving wheelchair.
+- **Global Costmap:** Combines the static map and sensor observations to support global path planning.
+- **Local Costmap:** Uses nearby sensor observations to support local obstacle avoidance.
 
-## 2. Global Costmap
+## 2. Robot Coordinate Frames
 
-The global costmap is used by the planner to generate paths while considering mapped obstacles.
+Both costmaps use `base_footprint` as the robot base frame.
 
-Previously observed configuration:
+```text
+odom
+ └── base_footprint
+      └── base_link
+```
 
-| Parameter | Value |
-|---|---|
-| Global Frame | `map` |
-| Robot Base Frame | `base_link` |
-| Resolution | 0.05 m |
-| Footprint | Configured in Nav2 YAML |
+The static transform between `base_footprint` and `base_link` has a Z offset of 0.17 m.
 
 ## 3. Local Costmap
 
-The local costmap provides nearby obstacle information for the controller.
-
-Previously observed configuration:
-
-| Parameter | Value |
+| Parameter | Active Configuration |
 |---|---|
 | Global Frame | `odom` |
-| Robot Base Frame | `base_link` |
-| Width | 16 m |
-| Height | 16 m |
+| Robot Base Frame | `base_footprint` |
+| Width | 6 m |
+| Height | 6 m |
 | Resolution | 0.05 m |
+| Update Frequency | 5 Hz |
+| Publish Frequency | 3 Hz |
+| Rolling Window | Enabled |
 
-## 4. Sensor Sources
+**Costmap Layers:**
+- Camera Layer (VoxelLayer)
+- LiDAR Layer (VoxelLayer)
+- Inflation Layer
 
-The costmaps are configured to use sensor data from:
+## 4. Global Costmap
 
-- Velodyne VLP-16 LiDAR.
-- Intel RealSense D455 depth camera.
+| Parameter | Active Configuration |
+|---|---|
+| Global Frame | `map` |
+| Robot Base Frame | `base_footprint` |
+| Width | 6 m |
+| Height | 6 m |
+| Resolution | 0.05 m |
+| Update Frequency | 3 Hz |
+| Publish Frequency | 2 Hz |
+| Rolling Window | Disabled |
 
-The exact active layer and topic configuration should be verified against `nav2_params.yaml`.
+**Costmap Layers:**
+- Static Layer
+- Camera Layer (VoxelLayer)
+- LiDAR Layer (VoxelLayer)
+- Inflation Layer
 
-**Current sensor source configuration:**
+## 5. Sensor Sources
 
-[INSERT YAML HERE]
+Both costmaps use the following point cloud sources:
 
-## 5. Costmap Visualization
+| Sensor | Topic | Data Type |
+|---|---|---|
+| RealSense D455 | `/camera/camera/depth/color/points_throttled` | PointCloud2 |
+| Velodyne VLP-16 | `/velodyne_points_throttled` | PointCloud2 |
 
-**Global costmap:**
+Both sources are configured for obstacle marking and clearing.
 
-[INSERT IMAGE HERE]
+### Height Filtering
 
-**Local costmap:**
+| Sensor | Minimum Height | Maximum Height |
+|---|---:|---:|
+| D455 | 0.07 m | 0.50 m |
+| VLP-16 | 0.50 m | 1.00 m |
 
-[INSERT IMAGE HERE]
+## 6. Inflation Layer
 
-## 6. Verification
+Both costmaps use the following inflation settings:
 
-Check that:
+| Parameter | Value |
+|---|---:|
+| Inflation Radius | 0.7 m |
+| Cost Scaling Factor | 15.0 |
 
-- Obstacles appear in the expected locations.
-- Sensor data updates the costmaps.
-- The wheelchair footprint is correctly represented.
-- Nearby obstacles are reflected in the local costmap.
+## 7. Footprint Configuration
 
-**Test observations:**
+The configured robot footprint is:
+
+```yaml
+footprint: "[[-0.50, -0.40], [-0.50, 0.40], [0.50, 0.40], [0.50, -0.40]]"
+```
+
+This footprint is configured in both the local and global costmaps.
+
+## 8. Visualization and Testing
+
+**Local Costmap:**
+
+[INSERT FOXGLOVE SCREENSHOT HERE]
+
+**Global Costmap:**
+
+[INSERT FOXGLOVE SCREENSHOT HERE]
+
+**Testing Observations:**
 
 [TO BE ADDED]
