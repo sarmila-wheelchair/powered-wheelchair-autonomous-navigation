@@ -59,8 +59,6 @@ Detailed documentation will be organized into the following sections:
 10. Foxglove Interface
 11. Calibration and Testing
 12. Troubleshooting
-13. Development History
-14. References
 
 ## 6. Development Environment
 
@@ -73,8 +71,6 @@ Detailed documentation will be organized into the following sections:
 ## 7. Project Status
 
 The project includes motor control, sensor integration, mapping, localization, autonomous navigation and a Foxglove-based destination interface.
-
-Further development, testing and documentation are ongoing.
 
 ---
 
