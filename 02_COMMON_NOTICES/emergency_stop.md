@@ -12,11 +12,10 @@ Its purpose is to provide a physical method of stopping motor operation during u
 
 **Emergency Stop Input:** S3
 
-**Wiring Configuration:** Normally Closed (NC)
+**Wiring Configuration:** Normally Closed (NC) connection.
 
-The emergency stop circuit is connected to the RoboClaw controller through its S3 input.
-
-The actual electrical behaviour and stopping response must be verified against the controller documentation and physical wiring.
+The emergency stop circuit is connected to the RoboClaw controller through its S3 input. 
+To reset the emergency stop, just untwist the button. 
 
 ## 3. Emergency Stop Responsibilities
 
@@ -38,8 +37,6 @@ Before operation:
 4. Verify that activating the emergency stop produces the intended motor stopping response.
 5. Verify that releasing or resetting the emergency stop does not unexpectedly restart motor movement.
 
-Testing must be conducted in a controlled environment with the drive wheels safely secured or elevated as appropriate.
-
 ## 5. Important Warnings
 
 - Never bypass the emergency stop circuit during operation.
@@ -48,19 +45,14 @@ Testing must be conducted in a controlled environment with the drive wheels safe
 - Do not modify the emergency stop wiring without verifying the controller documentation.
 - Never operate the wheelchair if the emergency stop is not functioning correctly.
 
-## 6. Future Documentation
+## 6. Documentation
 
-The following information should be added after physical verification:
+The following information are added in the next folder:
 
 - Emergency stop button model.
-- Wiring diagram.
-- RoboClaw S3 input configuration.
-- Measured stopping response.
-- Emergency stop test results.
-- Reset procedure.
+- Emergency stop button mount CAD file.
 
-## 7. Status
+<img width="568" height="635" alt="image" src="https://github.com/user-attachments/assets/1972dd3c-e9f8-4c9e-abdc-5a8c451298e7" />
 
-**Hardware configuration:** S3, normally-closed connection.
 
-**Functional verification:** To be documented.
+
