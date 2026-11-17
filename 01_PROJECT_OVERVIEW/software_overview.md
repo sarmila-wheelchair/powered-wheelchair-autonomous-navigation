@@ -14,13 +14,6 @@ The Ubuntu operating system runs on the LattePanda 3 Delta and provides the envi
 
 ROS 2 provides communication between the wheelchair's hardware, sensors and autonomous navigation software.
 
-Main responsibilities:
-- Communication between ROS 2 nodes.
-- Publishing and subscribing to topics.
-- Transform management using TF2.
-- Hardware integration.
-- Robot control and monitoring.
-
 ## 3. Motor Control and Odometry
 
 **Package:** basicmicro_ros2
@@ -119,5 +112,3 @@ Python is used for:
 | DWB | Local trajectory planning |
 | Foxglove Studio | Visualization |
 | Python | Custom programming |
-
-**Note:** This document describes the current software architecture. Individual configurations and implementation details are documented separately.
