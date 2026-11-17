@@ -33,10 +33,12 @@ Responsibilities:
 - Reads wheel encoder feedback.
 - Communicates with ROS 2 through serial communication.
 
-Known configuration:
+Basic configuration:
 - Serial device: `/dev/ttyACM0`
 - Baud rate: `38400`
 - Controller address: `128`
+
+Check out the Roboclaw user manual - https://downloads.basicmicro.com/docs/roboclaw_user_manual.pdf
 
 ## 4. LiDAR Sensor
 
@@ -77,7 +79,7 @@ The left and right drive motors are controlled independently to produce:
 - Left rotation.
 - Right rotation.
 
-Wheel encoder feedback is used to calculate odometry.
+Wheel encoder feedback is used to calculate odometry. Encoder used: AMT102-V
 
 ## 7. Hardware Integration
 
