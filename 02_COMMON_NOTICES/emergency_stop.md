@@ -13,6 +13,7 @@ Its purpose is to provide a physical method of stopping motor operation during u
 **Emergency Stop Input:** S3
 
 **Wiring Configuration:** Normally Closed (NC) connection.
+Configure the emergency stop connection in the Basic Micro Software. 
 
 The emergency stop circuit is connected to the RoboClaw controller through its S3 input. 
 To reset the emergency stop, just untwist the button. 
@@ -47,12 +48,8 @@ Before operation:
 
 ## 6. Documentation
 
-The following information are added in the next folder:
-
 - Emergency stop button model.
-- Emergency stop button mount CAD file.
 
 <img width="568" height="635" alt="image" src="https://github.com/user-attachments/assets/1972dd3c-e9f8-4c9e-abdc-5a8c451298e7" />
-
 
 
