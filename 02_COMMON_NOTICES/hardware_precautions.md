@@ -15,7 +15,6 @@ Precautions:
 - Avoid disconnecting power during software updates or file operations.
 - Maintain adequate ventilation.
 - Secure USB and Ethernet connections.
-- Avoid accidental disconnection of sensor communication cables.
 
 ## 3. RoboClaw Motor Controller
 
@@ -23,36 +22,25 @@ Precautions:
 
 Precautions:
 - Verify motor wiring before powering the controller.
-- Check motor polarity and direction.
-- Inspect encoder connections.
-- Verify serial communication settings.
-- Monitor controller temperature.
-- Avoid short circuits.
-- Ensure appropriate electrical protection is installed.
-
-Never modify motor wiring while the controller is powered.
+- Never modify motor wiring while the controller is powered.
+- Often gets Logic Battery High error ; try reconnecting wires on roboclaw & restart, it helps // problem unresolved.
 
 ## 4. Motors and Encoders
 
 Precautions:
-- Inspect motor connections regularly.
 - Verify left and right motor direction.
-- Check encoder feedback.
-- Inspect mechanical mounting.
-- Ensure wheels rotate freely when testing.
-- Secure the wheelchair before performing stationary motor tests.
-
+- Always ensure to start motors on very low speed.
+  
 ## 5. Velodyne VLP-16 LiDAR
 
 Precautions:
 - Verify the sensor power supply.
 - Check Ethernet connections.
-- Verify the configured IP address.
 - Keep the sensor optical surfaces clean.
-- Ensure the sensor is securely mounted.
+- Ensure the sensor is securely mounted (not shaky) 
 - Avoid obstructing the sensor's field of view.
 
-Known network configuration:
+Important Network configuration:
 - IP address: `192.168.1.201`
 - UDP port: `2368`
 - Rotation rate: `600 RPM`
@@ -63,11 +51,9 @@ Precautions:
 - Secure the camera mounting.
 - Protect the camera from physical impacts.
 - Keep the lenses clean.
-- Verify USB connection stability.
-- Monitor camera temperature.
-- Confirm depth and point cloud streams are functioning.
+- Verify USB connection stability - often gets error 'RealSense Not Detected'; try re plugging the wire. 
 
-Current configuration:
+Important configurations:
 - Camera name: `camera0`
 - Resolution: `424 × 240`
 - Frame rate: `15 FPS`
@@ -75,19 +61,15 @@ Current configuration:
 ## 7. Electrical and Wiring Precautions
 
 - Inspect wiring for damage.
-- Secure loose cables.
-- Prevent cables from contacting moving wheels.
+- Secure loose cables esp jumpers.
+- Prevent cables from contacting metal surfaces or moving wheels.
 - Verify connector polarity.
 - Avoid exposed electrical connections.
 - Disconnect power before hardware modifications.
-- Use appropriately rated fuses and electrical protection.
 
 ## 8. Mechanical Precautions
 
-- Inspect wheel mounting.
-- Check motor mounting bolts.
-- Verify sensor mounting stability.
-- Inspect the wheelchair frame.
+- Verify sensors mounting stability.
 - Ensure cables cannot become entangled in moving components.
 
 ## 9. Before Hardware Testing
@@ -99,15 +81,3 @@ Current configuration:
 5. Ensure the test area is clear.
 6. Have an operator ready to intervene.
 
-## 10. Maintenance Records
-
-Record the following whenever hardware maintenance is performed:
-
-- Date of maintenance.
-- Component inspected.
-- Issue identified.
-- Action performed.
-- Test results.
-- Person responsible.
-
-**Important:** Always refer to the manufacturer's electrical and mechanical specifications before modifying hardware.
