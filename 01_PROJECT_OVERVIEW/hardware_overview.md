@@ -54,6 +54,8 @@ Known configuration:
 - UDP data port: `2368`
 - Expected rotation rate: `600 RPM`
 
+  User Manual: https://docs.clearpathrobotics.com/assets/files/clearpath_robotics_029029-TDS2-00b7913d65b51a841cb5dc6c2b711487.pdf
+
 ## 5. Depth Camera
 
 **Device:** Intel RealSense D455
