@@ -17,15 +17,12 @@ The project uses two computers.
 - Runs LiDAR and camera drivers.
 - Runs SLAM Toolbox, AMCL and Nav2.
 - Handles autonomous navigation.
+-  Runs the Foxglove Bridge
 
 ### Dell XPS 13
 - Used for remote SSH access.
 - Used for software development.
-- Runs Foxglove Studio.
-- Runs the Foxglove Bridge.
 - Used for monitoring and visualization.
-
-**Important:** Editing a software file on the XPS does not automatically modify the corresponding file on the LattePanda.
 
 Always verify which computer contains the active configuration.
 
@@ -39,7 +36,15 @@ Before executing ROS 2 commands:
 - Verify network connectivity.
 - Confirm the correct computer is being accessed.
 
-Avoid running duplicate ROS 2 nodes unintentionally.
+# Wheelchair ROS 2 networking on xps bashrc
+export ROS_DOMAIN_ID=1
+export ROS_LOCALHOST_ONLY=0
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+export ROS_STATIC_PEERS="192.168.1.41"          #lattepanda ip add, use "192.168.1.27" on lattepanda 
+
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
+
 
 ## 4. Configuration File Precautions
 
@@ -71,8 +76,6 @@ Before launching the navigation system:
 - Verify TF transformations.
 - Check odometry publication.
 - Confirm that Nav2 nodes are active.
-
-Avoid launching duplicate hardware drivers or motor-control nodes.
 
 ## 6. TF Transformation Precautions
 
@@ -107,46 +110,4 @@ Before changing Nav2 parameters:
 - Review controller velocity limits.
 - Check recovery behaviour configuration.
 
-Always test navigation changes in a controlled environment.
 
-## 8. Source Code and Package Precautions
-
-Before modifying Python source files:
-
-- Preserve a working copy.
-- Check the package dependencies.
-- Avoid changing unrelated functions.
-- Build the affected package when required.
-- Check terminal output for errors.
-- Verify node functionality after rebuilding.
-
-## 9. GitHub Backup and Version Control
-
-GitHub is used as the central documentation and source-code repository.
-
-Important practices:
-
-- Commit working configurations.
-- Use descriptive commit messages.
-- Preserve known-good versions.
-- Record significant modifications.
-- Avoid uploading credentials or private keys.
-- Keep documentation synchronized with actual software.
-
-## 10. Software Recovery
-
-If a software modification causes problems:
-
-1. Stop autonomous operation.
-2. Identify the modified file.
-3. Check terminal errors.
-4. Compare against the previous working version.
-5. Restore the known-good configuration if necessary.
-6. Rebuild affected packages.
-7. Verify the system before testing again.
-
-## 11. Important Reminder
-
-Never assume that a successful software launch means the wheelchair is safe to operate.
-
-Always verify motor control, odometry, localization, sensor data, obstacle detection and emergency stopping independently.
