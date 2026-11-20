@@ -50,6 +50,6 @@ Before operation:
 
 - Emergency stop button model.
 
-<img width="568" height="635" alt="image" src="https://github.com/user-attachments/assets/1972dd3c-e9f8-4c9e-abdc-5a8c451298e7" />
+<img width="368" height="435" alt="image" src="https://github.com/user-attachments/assets/1972dd3c-e9f8-4c9e-abdc-5a8c451298e7" />
 
 
