@@ -1,11 +1,5 @@
 # Hardware Precautions
 
-## 1. Overview
-
-This document describes hardware precautions for the Powered Wheelchair Autonomous Navigation System.
-
-All hardware inspection, installation, maintenance and modifications must be performed carefully to avoid equipment damage and unsafe operation.
-
 ## 2. LattePanda 3 Delta
 
 The LattePanda 3 Delta acts as the main robot computer.
@@ -40,11 +34,6 @@ Precautions:
 - Ensure the sensor is securely mounted (not shaky) 
 - Avoid obstructing the sensor's field of view.
 
-Important Network configuration:
-- IP address: `192.168.1.201`
-- UDP port: `2368`
-- Rotation rate: `600 RPM`
-
 ## 6. Intel RealSense D455
 
 Precautions:
@@ -53,17 +42,11 @@ Precautions:
 - Keep the lenses clean.
 - Verify USB connection stability - often gets error 'RealSense Not Detected'; try re plugging the wire. 
 
-Important configurations:
-- Camera name: `camera0`
-- Resolution: `424 × 240`
-- Frame rate: `15 FPS`
 
 ## 7. Electrical and Wiring Precautions
 
-- Inspect wiring for damage.
-- Secure loose cables esp jumpers.
+- Inspect wiring for damage. # often has broken wire heads 
 - Prevent cables from contacting metal surfaces or moving wheels.
-- Verify connector polarity.
 - Avoid exposed electrical connections.
 - Disconnect power before hardware modifications.
 
@@ -72,12 +55,4 @@ Important configurations:
 - Verify sensors mounting stability.
 - Ensure cables cannot become entangled in moving components.
 
-## 9. Before Hardware Testing
-
-1. Inspect all electrical connections.
-2. Check motor controller wiring.
-3. Verify sensor connections.
-4. Confirm the emergency stop is functional.
-5. Ensure the test area is clear.
-6. Have an operator ready to intervene.
 
