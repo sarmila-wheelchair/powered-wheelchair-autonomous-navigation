@@ -1,10 +1,7 @@
 # Foxglove Setup
 
-## 1. Purpose
 
-This document describes how to connect Foxglove Studio to the powered wheelchair ROS 2 system for visualization and monitoring.
-
-## 2. System Architecture
+## 1. System Architecture
 
 The project uses two computers:
 
@@ -13,18 +10,8 @@ The project uses two computers:
 | LattePanda 3 Delta | Foxglove Bridge |
 | Dell XPS 13 | Foxglove Studio |
 
-The Foxglove Bridge runs on the LattePanda as part of the wheelchair system launch. Foxglove Studio runs on the XPS.
 
-## 3. Start the Wheelchair System
-
-1. Power on the LattePanda.
-2. Connect to it from the XPS using SSH.
-3. Launch the wheelchair ROS 2 system using the verified launch procedure.
-4. Confirm that the Foxglove Bridge has started successfully.
-
-The bridge must be running before Foxglove Studio can connect.
-
-## 4. Open Foxglove Studio
+## 2. Open Foxglove Studio
 
 On the XPS:
 
@@ -43,7 +30,7 @@ Replace `<LATTEPANDA_IP>` with the LattePanda's reachable network IP address.
 
 The port shown here is the project's known Foxglove Bridge port. Confirm the actual port in the active launch configuration if the connection fails.
 
-## 5. Verify the Connection
+## 3. Verify the Connection
 
 After connecting, check that Foxglove Studio can receive the expected ROS 2 data.
 
@@ -62,7 +49,7 @@ Useful topics to check include:
 
 Topic availability depends on which nodes are currently running.
 
-## 6. Visualization Panels
+## 4. Visualization Panels
 
 Foxglove can be configured with panels to monitor:
 
@@ -76,39 +63,20 @@ Foxglove can be configured with panels to monitor:
 - Local and global costmaps
 - Navigation status
 
-Save useful panel layouts as Foxglove layouts for future sessions.
 
-## 7. Destination Navigation Interface
-
-The project includes a Foxglove interface for selecting predefined wheelchair destinations and requesting navigation.
-
-The interface also provides a cancellation control.
-
-Before using destination navigation, confirm that:
-
-- The correct map is loaded.
-- Localization is working.
-- The robot's position is correct.
-- The navigation system is active.
-- The wheelchair's path is clear.
-- The emergency stop is accessible.
-
-## 8. Troubleshooting
+## 5. Troubleshooting
 
 If Foxglove Studio cannot connect:
 
-1. Confirm that the wheelchair system is running on the LattePanda.
-2. Check whether the Foxglove Bridge node is running.
-3. Confirm the bridge IP address and port.
-4. Check network connectivity between the XPS and LattePanda.
-5. Confirm that firewall settings are not blocking the connection.
-6. Restart the connection in Foxglove Studio if necessary.
+1. Check whether the Foxglove Bridge node is running.
+2. Confirm the bridge IP address and port.
+3. Check network connectivity between the XPS and LattePanda.
+4. Restart the connection in Foxglove Studio if necessary.          # this actually helps
 
-If the connection works but topics are missing, check whether the corresponding ROS 2 nodes and publishers are running.
 
-## 9. Performance Considerations
+## 6. Performance Considerations
 
-Displaying large point clouds and multiple visualization panels can increase computer resource usage.
+Displaying large point clouds (esp vlp) and multiple visualization panels can increase CPU %.
 
 For better performance:
 
@@ -118,10 +86,5 @@ For better performance:
 - Monitor CPU usage when displaying 3D data.
 - Keep the visualization configuration focused on the task.
 
-## 10. Important Notes
+  <img width="760" height="340" alt="Screenshot from 2026-11-12 16-43-56" src="https://github.com/user-attachments/assets/91dfee5b-c6e3-4d1d-9939-b0582040faaf" />
 
-- Foxglove Bridge runs on the LattePanda.
-- Foxglove Studio runs on the XPS.
-- The bridge must be reachable over the network.
-- Do not confuse the Foxglove Bridge with Foxglove Studio.
-- Record changes to bridge settings and visualization layouts in the development log.
