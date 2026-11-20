@@ -26,7 +26,7 @@ Previously configured settings:
 | Minimum Particles | 500 |
 | Maximum Particles | 2000 |
 
-**Note:** Verify these values against the currently active configuration.
+**Note:** Make sure the update frequency for amcl is 20HZ to avoid delayed data or 'world spinning issues'
 
 ## 3. Localization Inputs
 
@@ -62,16 +62,3 @@ odom → base_footprint
 
 Together, these transforms establish the wheelchair's estimated position in the map.
 
-## 6. Configuration and Screenshots
-
-**AMCL configuration:**
-
-[INSERT RELEVANT YAML HERE]
-
-**Foxglove localization screenshot:**
-
-[INSERT IMAGE HERE]
-
-**Localization observations:**
-
-[TO BE ADDED]
