@@ -41,7 +41,7 @@ amcl:
 bt_navigator:
   ros__parameters:
     use_sim_time: false
-    bt_loop_duration: 50          # ms, default is 10; this is your tick-rate warning
+    bt_loop_duration: 50          # ms, default is 10; this is  tick-rate warning
     global_frame: map
     robot_base_frame: base_footprint
     odom_topic: /odom
@@ -52,7 +52,7 @@ bt_navigator:
 map_server:
   ros__parameters:
     use_sim_time: false
-    yaml_filename: "/home/wheelchair/wheelchair_nav2/maps/whole_floor_map.yaml"
+    yaml_filename: "/home/wheelchair/wheelchair_nav2/maps/whole_floor_map.yaml"  
 
 controller_server:
   ros__parameters:
