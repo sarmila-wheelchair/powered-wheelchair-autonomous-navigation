@@ -8,7 +8,7 @@
 
 -Park the chair at the home position.
 
-<img width="538" height="264" alt="image" src="https://github.com/user-attachments/assets/a745512b-9b23-4316-b16b-db5660dd8448" />
+<img width="438" height="264" alt="image" src="https://github.com/user-attachments/assets/a745512b-9b23-4316-b16b-db5660dd8448" />
 
 -AMCL always resets to the initial pose (0, 0, 0) on startup.
 
