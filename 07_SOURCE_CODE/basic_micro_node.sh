@@ -515,7 +515,7 @@ class BasicmicroNode(Node):
         if self.connected and self.controller:
             try:
                 # Stop motors immediately for safety
-                self.get_logger().info("Stopping motors for safety :) ...")
+                self.get_logger().info("Stopping motors for safety :> ...")
                 self.controller.DutyM1M2(self.address, 0, 0)
                 time.sleep(0.1)  # Give motors time to stop
                 self.controller.close()
@@ -534,7 +534,7 @@ def main(args=None):
         node = BasicmicroNode()
         rclpy.spin(node)
     except KeyboardInterrupt:
-        print("\nShutting down... Stopping motors for safety.")
+        print("\nShutting down... Stopping motors for safety :>")
     except Exception as e:
         print(f"Error in basicmicro_node: {e}")
     finally:
