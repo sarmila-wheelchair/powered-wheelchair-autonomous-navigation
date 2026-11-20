@@ -1,12 +1,6 @@
 # Network Setup
 
-## 1. Purpose
-
-This document describes the network connections required for the powered wheelchair autonomous navigation system.
-
-The network connects the LattePanda robot computer, the XPS development computer, and the Velodyne VLP-16 LiDAR.
-
-## 2. Network Architecture
+## 1. Network Architecture
 
 The system uses two computers:
 
@@ -16,7 +10,7 @@ The system uses two computers:
 | Dell XPS 13 | Remote development and monitoring computer. Runs SSH client and Foxglove Studio. |
 | Velodyne VLP-16 | LiDAR sensor connected to the robot network via Ethernet. |
 
-## 3. Known Network Configuration
+## 2. Known Network Configuration
 
 The following VLP-16 network settings have been used in the project:
 
